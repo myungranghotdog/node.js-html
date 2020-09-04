@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+
+<body id="body">
+  <div class="sidenav">
+    <a href="../index.html">HOME</a>
+    <a href="./submenu.html">레시피 설정</a>
+    <a href="./labels.html">로봇 설정</a>
+    <a href="./robot1.html">로봇1번</a>
+    <a href="./mainmenus.html">테스트</a>
+    <a href="./mainmenus.html">테스트</a>
+    <a href="./mainmenus.html">테스트</a>
+    <a href="./mainmenus.html">테스트</a>
+    <a href="./mainmenus.html">테스트</a>
+    <a href="./mainmenus.html">테스트</a>
+    <a href="./mainmenus.html">테스트</a>
+    <a href="./mainmenus.html">테스트</a>
+  </div>
+
+  <div id = "boxname">
+    <p style = " font-size : 30px;  line-height : 10px;"> 온도 조절</p>
+    <p style = " font-size : 20px;"> (온도는 9단계로 이루어져 있습니다.)</p> 
+  </div>
+
+  <div id = "mybox">
+    <div><button type = "button" id = "button_1" onclick="myOnClick1()"> <p> 최고 온도</p>  </button></div>
+    <div style = 'visibility : hidden;'><button type = "button" id = "button"> dxxf </button></div>
+    <div><button type = "button" id = "button_2" onclick="myOnClick2()"> <p> 감온 </p></button></div>
+  </div>
+  
+<script src="../node_modules/socket.io-client/dist/socket.io.js"></script>
+<script>
+
+  var socket = io.connect('http://localhost:5300');
+
+  function myOnClick1() {
+        socket.emit('temadd');
+        console.log("on");
+    }
+    function myOnClick2() {
+        socket.emit('temsub');
+        console.log("off");
+    }
+</script>
+   
+</body>
+</html> 
